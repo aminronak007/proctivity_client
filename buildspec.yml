@@ -1,0 +1,27 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      nodejs: 14
+    commands:
+      - echo Installing
+  pre_build:
+    commands:
+      - echo Installing source NPM dependencies.
+      - npm install
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo test codes
+      - CI=true npm test
+      - echo Compiling the codes
+      - npm run build
+      - echo build finished
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - sudo mv build Public
+      #
+    artifacts:
+      files:
+        - '**/*'

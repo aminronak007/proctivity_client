@@ -1,0 +1,60 @@
+$colors: (
+  label1: #77a361,
+  label2: #cd6889,
+  label3: #2f4f4f,
+  label4: #104e8b,
+  label5: #a020f0,
+  label6: #ff8000,
+  taskboardicons: #6c6689,
+  success: #57c4a7,
+  whitelight: #fff,
+  lightGrey: #f4f5f7,
+  nevy: #563c91
+);
+
+$widgets: (
+  greytext: #6c757d,
+  lighttext: #575d78
+);
+
+@each $key, $value in $colors {
+  .#{$key} {
+    background: $value;
+    background-color: $value !important;
+    border-color: $value !important;
+  }
+  .#{$key}--text {
+    color: $value !important;
+  }
+  .#{$key}-c-hover {
+    &:hover {
+      color: $value !important;
+    }
+  }
+  .#{$key}-b-hover {
+    &:hover {
+      background-color: $value !important;
+    }
+  }
+}
+
+@each $w, $value in $widgets {
+  .#{$w} {
+    background: $value;
+    background-color: $value !important;
+    border-color: $value !important;
+  }
+  .#{$w}--text {
+    color: $value !important;
+  }
+  .#{$w}-c-hover {
+    &:hover {
+      color: $value !important;
+    }
+  }
+  .#{$w}-b-hover {
+    &:hover {
+      background-color: $value !important;
+    }
+  }
+}
